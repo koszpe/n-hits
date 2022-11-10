@@ -7,7 +7,8 @@ DOCKER_PARAMETERS := \
 	--user $(shell id -u) \
 	-v ${ROOT}:/app \
 	-w /app \
-	-e HOME=/tmp
+	-e HOME=/tmp \
+	--ipc=host
 
 ifdef gpu
 	DOCKER_PARAMETERS += --gpus all

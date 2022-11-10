@@ -8,7 +8,7 @@ RUN apt-get update  -y --fix-missing && \
     git && \
     apt-get clean -y
 
-RUN echo "%docker  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/inside_sudoers
+RUN mkdir /etc/sudoers.d/ && echo "%docker  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/inside_sudoers
 
 COPY entry.sh /entry.sh
 RUN chmod +x /entry.sh
